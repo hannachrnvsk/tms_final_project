@@ -38,12 +38,6 @@ class LoginPageLocators:
     ALIAS_FIELD = (By.CSS_SELECTOR,)
 
 
-
-
-
-
-
-
 class ProductPageLocators:
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "button[name='Submit']")
     PRODUCT_QUANTITY_UP = (By.CSS_SELECTOR, "a.product_quantity_up")
