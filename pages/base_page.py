@@ -1,9 +1,10 @@
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
-from selenium.webdriver.support import expected_conditions as  EC
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
 class BasePage:
+
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
@@ -13,6 +14,7 @@ class BasePage:
         self.browser.get(self.url)
 
     def is_element_present(self,method, locator):
+        """ Makes sure element is present """
         try:
             WebDriverWait(self.browser, 10).until(EC.presence_of_element_located((method,locator)))
         except NoSuchElementException:
@@ -49,3 +51,10 @@ class BasePage:
         except TimeoutException:
             return True
         return False
+
+    def element_is_visible(self,method, locator,timeout=5):
+        try:
+            WebDriverWait(self.browser, timeout).until(EC.visibility_of_element_located((method, locator)))
+        except TimeoutException:
+            return False
+        return True
