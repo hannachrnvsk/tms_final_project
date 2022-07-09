@@ -18,27 +18,41 @@ class Emails:
     BLANK_EMAIL = ""
 
 
-class UserInfoToCreateAccount:
-    """ Contains data necessary to create user in format
-    0. First Name
-    1. Last Name
-    2. Password
-    3. Company
-    4. Address
-    5. Address (Building)
-    6. City
-    7. Postal Code
-    8. Additional Info
-    9. Home Phone
-    10. Mobile Phone
-    11. Alias
-     """
+class Users:
+    def __init__(self, first_name=None, last_name=None, email=None, password=None,
+                 day_of_birth=None, month_of_birth=None, year_of_birth=None,
+                 company=None, address_street=None, address_build=None,
+                 city=None, state=None ,postal_code=None, country=None, additional_info=None,home_phone=None,
+                 mobile_phone=None, alias=None ):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.password = password
+        self.day_of_birth = day_of_birth
+        self.month_of_birth = month_of_birth
+        self.year_of_birth = year_of_birth
+        self.company = company
+        self.address_street = address_street
+        self.address_build = address_build
+        self.city = city
+        self.state = state
+        self.postal_code = postal_code
+        self.country = country
+        self.additional_info = additional_info
+        self.home_phone = home_phone
+        self.mobile_phone = mobile_phone
+        self.alias = alias
 
-    ALL_POSIBLE_VALID_DATA_1 = ["Ivan", "Ivanov", "qwert67*", "TeachMeSkills", "Sikorskego", "65", "Warsaw", "12345", "Married", "456821", "4521893", "ivanushka"]
 
-# class Links:
-#     PRODUCT_LINK = "http://automationpractice.com/index.php?id_product=2&controller=product"
+valid_user = Users("Kate", "Romanova", "romakat@gmail.com", "qwerts37",
+                   "23","7", "2000", "TeachMeSkills", "kalinovskogo",
+                   "24","Wasrsaw", "Arizona", "45871", "United States",
+                   "married", "2345678", "14256379", "romakat")
 
 
-blouse = Product("Blouse", 27.00 , 2, "M")
+
+
+
+
+
 

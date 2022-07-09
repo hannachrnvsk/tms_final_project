@@ -1,6 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import Select
 
 
 class BasePage:
@@ -36,7 +37,7 @@ class BasePage:
         self.browser.find_element(method,locator).text()
 
     def is_disappeared(self, method, locator, timeout=4):
-        """проверяет, что элемент исчезает в течение заданного времени"""
+        """makes sure that element disappears within a given time """
         try:
             WebDriverWait(self.browser, timeout, 1, TimeoutException). \
                 until_not(EC.presence_of_element_located((method, locator)))
@@ -45,7 +46,7 @@ class BasePage:
         return True
 
     def is_not_element_present(self, method, locator, timeout=4):
-        """проверяет, что элемент не появляется на странице в течение заданного времени"""
+        """makes sure that element doesn"t appear within a given time """
         try:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((method, locator)))
         except TimeoutException:
@@ -58,3 +59,11 @@ class BasePage:
         except TimeoutException:
             return False
         return True
+
+    def select_from_dropdown(self,method,locator):
+        element = Select(self.return_element_located(method,locator))
+        return element
+
+
+
+

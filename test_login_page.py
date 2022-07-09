@@ -1,6 +1,7 @@
 import pytest
-from pages.data import Emails, UserInfoToCreateAccount
-from  pages.login_page import LoginPage
+from pages.data import Emails, valid_user
+from pages.login_page import LoginPage
+
 
 link = "http://automationpractice.com/index.php?controller=authentication&back=my-account"
 
@@ -20,7 +21,7 @@ def test_reg_form_does_not_accept_invalid_mail(browser,email):
     page.open()
     page.should_be_login_page()
     page.enter_mail_to_create_acc(email)
-    page.click_create_acc_button()
+    page.click_create_acc_button_to_start_creation()
     page.should_be_red_message_invalid_email()
 
 
@@ -31,18 +32,44 @@ def test_reg_form_accepts_valid_email(browser, email):
     page.open()
     page.should_be_login_page()
     page.enter_mail_to_create_acc(email)
-    page.click_create_acc_button()
+    page.click_create_acc_button_to_start_creation()
     page.creating_account_form_appeared()
 
 
-@pytest.mark.parametrize("data", [UserInfoToCreateAccount.ALL_POSIBLE_VALID_DATA_1])
+@pytest.mark.parametrize("data", [valid_user])
 def test_can_create_user(browser,data):
     page = LoginPage(browser, link)
     page.open()
     page.should_be_login_page()
-    page.enter_mail_to_create_acc(Emails.VALID_EMAIL)
-    page.click_create_acc_button()
+    page.enter_mail_to_create_acc(data.email)
+    page.click_create_acc_button_to_start_creation()
     page.creating_account_form_appeared()
+    page.choose_title()
+    page.enter_first_name(data.first_name)
+    page.enter_last_name(data.last_name)
+    page.enter_password(data.password)
+    page.choose_day_of_birth(data.day_of_birth)
+    page.choose_month_of_birth(data.month_of_birth)
+    page.choose_year_of_birth(data.year_of_birth)
+    page.press_signup_for_newsletter_checkbox()
+    page.press_receive_special_offers()
+    page.enter_company(data.company)
+    page.enter_address_street(data.address_street)
+    page.enter_city(data.city)
+    page.choose_state_from_dropdown(data.state)
+    page.enter_postal_code(data.postal_code)
+    page.choose_country_from_dropdown(data.country)
+    page.enter_additional_info(data.additional_info)
+    page.enter_home_phone(data.home_phone)
+    page.enter_mobile_phone(data.mobile_phone)
+    page.enter_alias(data.alias)
+    page.press_submit_button_to_create_acc()
+    page.see_welcoming_message_account_created()
+
+
+
+
+
 
 
 

@@ -1,8 +1,10 @@
 from .base_page import BasePage
-from .data import blouse
+from .data import Product
 from .locators import ProductPageLocators
-from selenium.webdriver.support.ui import Select
 
+
+"""Creating product object to execute test"""
+blouse = Product("Blouse", 27.00 , 2, "M")
 
 class ProductPage(BasePage):
 
@@ -34,7 +36,7 @@ class ProductPage(BasePage):
         assert self.return_element_located(*ProductPageLocators.TOTAL_SUM_OF_ADDED_PRODUCT_IN_MESSAGE).text == blouse.total_sum
 
     def select_size_of_product(self):
-        size = Select(self.browser.find_element(*ProductPageLocators.SELECT_PRODUCT_SIZE))
+        size = self.select_from_dropdown(*ProductPageLocators.SELECT_PRODUCT_SIZE)
         size.select_by_visible_text(blouse.size)
 
     def size_in_message_is_equal_to_expected(self):
