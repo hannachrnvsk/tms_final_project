@@ -38,6 +38,7 @@ class LoginPageLocators:
     ALIAS_FIELD = (By.CSS_SELECTOR, "input#alias")
     SUBMIT_CREATION_OF_ACCOUNT = (By.CSS_SELECTOR, "button#submitAccount")
     WELCOMING_MESSAGE_ACCOUNT_CREATED = (By.CSS_SELECTOR, "p.info-account")
+    RED_MESSAGE_ACCOUNT_ALREADY_EXISTS = (By.CSS_SELECTOR, "div#create_account_error.alert.alert-danger li")
 
 
 class ProductPageLocators:
