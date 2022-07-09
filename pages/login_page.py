@@ -119,6 +119,10 @@ class LoginPage(BasePage):
         welcome_message = self.return_element_located(*LoginPageLocators.WELCOMING_MESSAGE_ACCOUNT_CREATED).text
         assert "Welcome to your account" in welcome_message
 
+    def see_red_message_account_already_exists(self):
+        self.is_element_present(*LoginPageLocators.RED_MESSAGE_ACCOUNT_ALREADY_EXISTS)
+        acc_exists = self.return_element_located(*LoginPageLocators.RED_MESSAGE_ACCOUNT_ALREADY_EXISTS)
+        assert "An account using this email address has already been registered." in acc_exists.text
 
 
 

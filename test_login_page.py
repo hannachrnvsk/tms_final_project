@@ -1,5 +1,5 @@
 import pytest
-from pages.data import Emails, valid_user
+from pages.data import Emails, valid_user_already_created
 from pages.login_page import LoginPage
 
 
@@ -36,8 +36,8 @@ def test_reg_form_accepts_valid_email(browser, email):
     page.creating_account_form_appeared()
 
 
-@pytest.mark.parametrize("data", [valid_user])
-def test_can_create_user(browser,data):
+@pytest.mark.parametrize("data", [valid_user_already_created])
+def test_guest_can_create_user(browser, data):
     page = LoginPage(browser, link)
     page.open()
     page.should_be_login_page()
@@ -66,6 +66,15 @@ def test_can_create_user(browser,data):
     page.press_submit_button_to_create_acc()
     page.see_welcoming_message_account_created()
 
+
+@pytest.mark.parametrize("data", [valid_user_already_created])
+def test_guest_cant_create_user_with_email_used_earlier(browser, data):
+    page = LoginPage(browser, link)
+    page.open()
+    page.should_be_login_page()
+    page.enter_mail_to_create_acc(data.email)
+    page.click_create_acc_button_to_start_creation()
+    page.see_red_message_account_already_exists()
 
 
 
