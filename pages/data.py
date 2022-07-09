@@ -44,7 +44,7 @@ class Users:
         self.alias = alias
 
 
-valid_user = Users("Kate", "Romanova", "romakat@gmail.com", "qwerts37",
+valid_user_already_created = Users("Kate", "Romanova", "romakat@gmail.com", "qwerts37",
                    "23","7", "2000", "TeachMeSkills", "kalinovskogo",
                    "24","Wasrsaw", "Arizona", "45871", "United States",
                    "married", "2345678", "14256379", "romakat")
