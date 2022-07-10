@@ -1,6 +1,5 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
-from selenium.webdriver.support.ui import Select
 
 
 class LoginPage(BasePage):
@@ -123,6 +122,24 @@ class LoginPage(BasePage):
         self.is_element_present(*LoginPageLocators.RED_MESSAGE_ACCOUNT_ALREADY_EXISTS)
         acc_exists = self.return_element_located(*LoginPageLocators.RED_MESSAGE_ACCOUNT_ALREADY_EXISTS)
         assert "An account using this email address has already been registered." in acc_exists.text
+
+    def delete_account(self):
+        pass
+
+    def enter_email_to_sign_in(self, data):
+        email_field = self.return_element_located(*LoginPageLocators.EMAIL_TO_SIGN_IN)
+        email_field.send_keys(data)
+
+    def enter_password_to_sign_in(self, data):
+        password = self.return_element_located(*LoginPageLocators.PASSWORD_FIELD_TO_SIGN_IN)
+        password.send_keys(data)
+
+    def see_error_message_invalid_data(self):
+        result = self.is_element_present(*LoginPageLocators.RED_MESSAGE_ACCOUNT_CANT_BE_CREATED)
+        assert result == True
+
+
+
 
 
 
