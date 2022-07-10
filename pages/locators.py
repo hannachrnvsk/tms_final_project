@@ -39,7 +39,9 @@ class LoginPageLocators:
     SUBMIT_CREATION_OF_ACCOUNT = (By.CSS_SELECTOR, "button#submitAccount")
     WELCOMING_MESSAGE_ACCOUNT_CREATED = (By.CSS_SELECTOR, "p.info-account")
     RED_MESSAGE_ACCOUNT_ALREADY_EXISTS = (By.CSS_SELECTOR, "div#create_account_error.alert.alert-danger li")
-
+    EMAIL_TO_SIGN_IN = (By.CSS_SELECTOR, "input#email")
+    PASSWORD_FIELD_TO_SIGN_IN = (By.CSS_SELECTOR,"input#passwd")
+    RED_MESSAGE_ACCOUNT_CANT_BE_CREATED = (By.CSS_SELECTOR, "div.alert.alert-danger")
 
 class ProductPageLocators:
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "button[name='Submit']")
