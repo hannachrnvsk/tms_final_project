@@ -48,6 +48,28 @@ class Users:
         self.alias = alias
 
 
+class RandomUsers:
+    def __init__(self, state=None, country=None):
+        self.first_name = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
+        self.last_name = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
+        self.email = self.first_name + "@gmail.com"
+        self.password = random.randint(10000, 999999)
+        self.day_of_birth = str(random.randint(1, 28))
+        self.month_of_birth = str(random.randint(1, 12))
+        self.year_of_birth = str(random.randint(1965, 2004))
+        self.company = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
+        self.address_street = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
+        self.address_build = random.randint(1, 999)
+        self.city = ''.join(random.choice(string.ascii_lowercase) for i in range(7))
+        self.state = state
+        self.postal_code = random.randint(10000, 99999)
+        self.country = country
+        self.additional_info = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
+        self.home_phone = random.randint(10000, 999999)
+        self.mobile_phone = random.randint(100000, 9999999)
+        self.alias = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
+
+
 valid_user_already_created = Users("Kate", "Romanova", "romakat@gmail.com", "qwerts37",
                    "23","7", "2000", "TeachMeSkills", "kalinovskogo",
                    "24","Wasrsaw", "Arizona", "45871", "United States",
@@ -83,28 +105,6 @@ user_invalid_homephone = Users("123456", "Bronson", "ay67o@mail.ru", "qgtytjt",
                    "24","New-York", "California", "45871", "United States",
                    "married", "djgnkj", "14356379", "bronialex")
 
-
-
-class RandomUsers:
-    def __init__(self, state=None, country=None):
-        self.first_name = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
-        self.last_name = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
-        self.email = self.first_name + "@gmail.com"
-        self.password = random.randint(10000, 999999)
-        self.day_of_birth = str(random.randint(1, 28))
-        self.month_of_birth = str(random.randint(1, 12))
-        self.year_of_birth = str(random.randint(1965, 2004))
-        self.company = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
-        self.address_street = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
-        self.address_build = random.randint(1, 999)
-        self.city = ''.join(random.choice(string.ascii_lowercase) for i in range(7))
-        self.state = state
-        self.postal_code = random.randint(10000, 99999)
-        self.country = country
-        self.additional_info = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
-        self.home_phone = random.randint(10000, 999999)
-        self.mobile_phone = random.randint(100000, 9999999)
-        self.alias = ''.join(random.choice(string.ascii_lowercase) for i in range(8))
 
 
 
