@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tms_fin_project"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pytest = "^7.1.2"
+selenium = "^4.3.0"
+fake_user_agent = "^0.0.15"
+allure-pytest = "^2.9.45"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
