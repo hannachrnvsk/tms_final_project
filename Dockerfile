@@ -30,7 +30,6 @@ RUN poetry config virtualenvs.create false && \
 
 
 # Copy the source code into the image.
-COPY data ./data
 COPY conftest.py ./
 COPY test_login_page.py ./
 COPY test_product_page.py ./
