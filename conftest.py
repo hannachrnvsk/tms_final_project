@@ -18,11 +18,14 @@ def browser(request):
     print("\nstart browser for test..")
     options = Options()
     # options.add_experimental_option('prefs', {'intl.accept_languages': language})
-    options.add_argument("chrome") # change to "chrome" to see
+    options.add_argument("--headless") # change to "chrome" to see
     options.add_argument("--start-maximized")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-setuid-sandbox")
+    options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1980,1080")
     options.add_argument(f"user-agent = {user}")
-    browser = webdriver.Chrome(options=options)
+    browser = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", options=options)
     browser.implicitly_wait(10)
     yield browser
     print("\nmust quit browser..")
