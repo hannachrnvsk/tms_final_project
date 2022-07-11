@@ -28,6 +28,7 @@ COPY poetry.lock pyproject.toml ./
 RUN poetry config virtualenvs.create false && \
     poetry install --no-interaction --no-ansi
 
+
 # Copy the source code into the image.
 COPY data ./data
 COPY conftest.py ./
