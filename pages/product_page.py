@@ -30,7 +30,8 @@ class ProductPage(BasePage):
         self.click_button(*ProductPageLocators.VIEW_CART_BUTTON)
 
     def see_success_message_after_adding_product_to_cart(self):
-        self.element_is_visible(*ProductPageLocators.SUCCESS_MESSAGE_PRODUCT_ADDED)
+        result = self.element_is_visible(*ProductPageLocators.SUCCESS_MESSAGE_PRODUCT_ADDED)
+        assert result == True, "No success message after adding product to cart!"
 
     def sum_of_added_product_is_equal_to_expected(self):
         assert self.return_element_located(*ProductPageLocators.TOTAL_SUM_OF_ADDED_PRODUCT_IN_MESSAGE).text == blouse.total_sum
