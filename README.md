@@ -200,6 +200,7 @@ If got `Failed to lookup host: registry-1.docker.io`, login/signup into the Dock
 docker build -t "aut:local" .
 ```
 
+# Running Tests
 ## Via Pycharm
 Confirm that the project has been installed and PyCharm project interpreter, running configuration and environment variables has been configured correctly.
 Use the PyCharm UI to run the test, and it should pass first time. Pycharm is automatically put root folder into `sys.path`, which updates `PYTHONPATH` and prevents ImportError
