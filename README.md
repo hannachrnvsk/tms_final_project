@@ -233,5 +233,5 @@ By using `python -m` we are adding root to `sys.path` see https://stackoverflow.
 To run the tests inside a container using the image built above:
 
 ```shell
-docker run aut:local /bin/bash -c "pytest -v --tb=line"
+docker run aut:local /bin/bash -c "pytest -v --tb=line --reruns 3"
 ```

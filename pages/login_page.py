@@ -24,13 +24,13 @@ class LoginPage(BasePage):
         email_field.send_keys(email)
 
     def should_be_red_message_invalid_email(self):
-        self.is_element_present(*LoginPageLocators.RED_MESSAGE_INVALID_EMAIL_WHILE_CREATING_ACC), " No message, that email is invalid. System accepted invalid email"
+        assert self.is_element_present(*LoginPageLocators.RED_MESSAGE_INVALID_EMAIL_WHILE_CREATING_ACC), " No message, that email is invalid. System accepted invalid email"
 
     def click_create_acc_button_to_start_creation(self):
         self.click_button(*LoginPageLocators.CREATE_ACC_BUTTON)
 
     def creating_account_form_appeared(self):
-        self.is_element_present(*LoginPageLocators.ACCOUNT_CREATION_FORM), "Account creation form didn't appear! "
+        assert self.is_element_present(*LoginPageLocators.ACCOUNT_CREATION_FORM), "Account creation form didn't appear! "
 
     def choose_title(self):
         self.click_button(*LoginPageLocators.TITLE_RADIOBUTTON)
