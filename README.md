@@ -156,22 +156,6 @@ created by Poetry. To confirm:
 - Expand the `Imports` section at the top of the file
 - All imports should be recognised and not underlined in red
 
-### Pre-commit checks
-
-The `pre-commit` module is used to ensure the code in this repo adheres to a set of coding standards on each and every
-commit. To setup the `pre-commit` hooks, run the following (this only needs doing once):
-
-```shell
-poetry run pre-commit install --install-hooks
-```
-
-Before committing code, it is recommended that you run the following command to see if any changes have caused the
-static code analysis tools to highlight an issue:
-
-```shell
-poetry run pre-commit run --all-files
-```
-
 ### ChromeDriver
 
 Install the latest release of the [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads).
