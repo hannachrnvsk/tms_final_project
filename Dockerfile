@@ -18,9 +18,7 @@ RUN export chrome_version=$(google-chrome --version | grep -P -o --regexp='\d+\.
 RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 
 # Download and install allure
-RUN wget https://launchpad.net/~qameta/+archive/ubuntu/allure/+files/allure_2.4.1~xenial_all.deb
-RUN dpkg -i allure_2.4.1~xenial_all.deb
-RUN apt-get install -f
+
 
 # Install poetry.
 RUN pip install "poetry==$POETRY_VERSION"
