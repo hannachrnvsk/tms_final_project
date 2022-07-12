@@ -140,6 +140,15 @@ class LoginPage(BasePage):
         result = self.is_element_present(*LoginPageLocators.RED_MESSAGE_ACCOUNT_CANT_BE_CREATED)
         assert result == True
 
+    def press_signin_button(self):
+        self.click_button(*LoginPageLocators.SIGNIN_BUTTON)
+
+    def see_welcoming_message_signed_in(self):
+        self.is_element_present(*LoginPageLocators.WELCOMING_MESSAGE_ACCOUNT_CREATED)
+        welcome_message = self.return_element_located(*LoginPageLocators.WELCOMING_MESSAGE_ACCOUNT_CREATED).text
+        assert "Welcome to your account" in welcome_message
+
+
 
 
 
