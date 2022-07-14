@@ -220,7 +220,7 @@ docker run aut:local /bin/bash -c "pytest -v --tb=line --reruns 3"
 ##Via Jenkins
 - Open Jenkins in your local machine
 - Create a new Job.
-- Choose type job: Pipeline
+- Choose type of job "Pipeline"
 - In the page that opens, click tab Pipeline
 - In field "Definition" choose "Pipeline script from SCM"
 - In field "SCM" choose "Git"
