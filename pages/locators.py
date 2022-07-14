@@ -40,16 +40,17 @@ class LoginPageLocators:
     WELCOMING_MESSAGE_ACCOUNT_CREATED = (By.CSS_SELECTOR, "p.info-account")
     RED_MESSAGE_ACCOUNT_ALREADY_EXISTS = (By.CSS_SELECTOR, "div#create_account_error.alert.alert-danger li")
     EMAIL_TO_SIGN_IN = (By.CSS_SELECTOR, "input#email")
-    PASSWORD_FIELD_TO_SIGN_IN = (By.CSS_SELECTOR,"input#passwd")
+    PASSWORD_FIELD_TO_SIGN_IN = (By.CSS_SELECTOR, "input#passwd")
     RED_MESSAGE_ACCOUNT_CANT_BE_CREATED = (By.CSS_SELECTOR, "div.alert.alert-danger")
+
 
 class ProductPageLocators:
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "button[name='Submit']")
     PRODUCT_QUANTITY_UP = (By.CSS_SELECTOR, "a.product_quantity_up")
     PRODUCT_IMAGE = (By.CSS_SELECTOR, "img#bigpic")
     PRODUCT_INFO_FIELD = (By.CSS_SELECTOR, "div[class='pb-center-column col-xs-12 col-sm-4']")
-    ADD_TO_CART_FIELD =(By.CSS_SELECTOR, "div[class='box-info-product']" )
-    VIEW_CART_BUTTON = (By.CSS_SELECTOR , "div.shopping_cart>a")
+    ADD_TO_CART_FIELD = (By.CSS_SELECTOR, "div[class='box-info-product']")
+    VIEW_CART_BUTTON = (By.CSS_SELECTOR, "div.shopping_cart>a")
     SUCCESS_MESSAGE_PRODUCT_ADDED = (By.CSS_SELECTOR, "div#layer_cart>div.clearfix")
     TOTAL_SUM_OF_ADDED_PRODUCT_IN_MESSAGE = (By.CSS_SELECTOR, "span#layer_cart_product_price")
     SELECT_PRODUCT_SIZE = (By.CSS_SELECTOR, "select#group_1")

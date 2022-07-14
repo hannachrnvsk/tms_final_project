@@ -3,7 +3,6 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
-
     def should_be_login_page(self):
         self.should_be_login_url()
         self.should_be_signin_form()
@@ -25,14 +24,14 @@ class LoginPage(BasePage):
 
     def should_be_red_message_invalid_email(self):
         result = self.is_element_present(*LoginPageLocators.RED_MESSAGE_INVALID_EMAIL_WHILE_CREATING_ACC)
-        assert result == True, " No message, that email is invalid. System accepted invalid email"
+        assert result is True, " No message, that email is invalid. System accepted invalid email"
 
     def click_create_acc_button_to_start_creation(self):
         self.click_button(*LoginPageLocators.CREATE_ACC_BUTTON)
 
     def creating_account_form_appeared(self):
         result = self.is_element_present(*LoginPageLocators.ACCOUNT_CREATION_FORM)
-        assert result == True, "Account creation form didn't appear! "
+        assert result is True, "Account creation form didn't appear! "
 
     def choose_title(self):
         self.click_button(*LoginPageLocators.TITLE_RADIOBUTTON)
@@ -49,7 +48,7 @@ class LoginPage(BasePage):
         password = self.return_element_located(*LoginPageLocators.PASSWORD_FIELD_REG)
         password.send_keys(data)
 
-    def choose_day_of_birth(self,data):
+    def choose_day_of_birth(self, data):
         day_of_birth = self.select_from_dropdown(*LoginPageLocators.DAY_OF_BIRTH)
         day_of_birth.select_by_value(data)
 
@@ -57,7 +56,7 @@ class LoginPage(BasePage):
         month_of_birth = self.select_from_dropdown(*LoginPageLocators.MONTH_OF_BIRTH)
         month_of_birth.select_by_value(data)
 
-    def choose_year_of_birth(self,data):
+    def choose_year_of_birth(self, data):
         year_of_birth = self.select_from_dropdown(*LoginPageLocators.YEAR_OF_BIRTH)
         year_of_birth.select_by_value(data)
 
@@ -79,15 +78,15 @@ class LoginPage(BasePage):
         address_build = self.return_element_located(*LoginPageLocators.ADDRESS_BUILDING_FIELD)
         address_build.send_keys(data)
 
-    def enter_city(self,data):
+    def enter_city(self, data):
         city = self.return_element_located(*LoginPageLocators.CITY_FIELD)
         city.send_keys(data)
 
-    def choose_state_from_dropdown(self,data):
+    def choose_state_from_dropdown(self, data):
         state = self.select_from_dropdown(*LoginPageLocators.STATE_DROPDOWN)
         state.select_by_visible_text(data)
 
-    def enter_postal_code(self,data):
+    def enter_postal_code(self, data):
         postal_code = self.return_element_located(*LoginPageLocators.POSTAL_CODE_FIELD)
         postal_code.send_keys(data)
 
@@ -95,19 +94,19 @@ class LoginPage(BasePage):
         country = self.select_from_dropdown(*LoginPageLocators.COUNTRY_DROPDOWN)
         country.select_by_visible_text(data)
 
-    def enter_additional_info(self,data):
+    def enter_additional_info(self, data):
         additional_info = self.return_element_located(*LoginPageLocators.ADDITIONAL_INFO_FIELD)
         additional_info.send_keys(data)
 
-    def enter_home_phone(self,data):
+    def enter_home_phone(self, data):
         home_phone = self.return_element_located(*LoginPageLocators.HOME_PHONE_FIELD)
         home_phone.send_keys(data)
 
-    def enter_mobile_phone(self,data):
+    def enter_mobile_phone(self, data):
         mobile_phone = self.return_element_located(*LoginPageLocators.MOBILE_PHONE_FIELD)
         mobile_phone.send_keys(data)
 
-    def enter_alias(self,data):
+    def enter_alias(self, data):
         alias = self.return_element_located(*LoginPageLocators.ALIAS_FIELD)
         alias.clear()
         alias.send_keys(data)
@@ -138,7 +137,7 @@ class LoginPage(BasePage):
 
     def see_error_message_invalid_data(self):
         result = self.is_element_present(*LoginPageLocators.RED_MESSAGE_ACCOUNT_CANT_BE_CREATED)
-        assert result == True
+        assert result is True
 
     def press_signin_button(self):
         self.click_button(*LoginPageLocators.SIGNIN_BUTTON)
@@ -147,13 +146,3 @@ class LoginPage(BasePage):
         self.is_element_present(*LoginPageLocators.WELCOMING_MESSAGE_ACCOUNT_CREATED)
         welcome_message = self.return_element_located(*LoginPageLocators.WELCOMING_MESSAGE_ACCOUNT_CREATED).text
         assert "Welcome to your account" in welcome_message
-
-
-
-
-
-
-
-
-
-
