@@ -217,3 +217,15 @@ To run the tests inside a container using the image built above:
 ```shell
 docker run aut:local /bin/bash -c "pytest -v --tb=line --reruns 3"
 ```
+##Via Jenkins
+- Open Jenkins in your local machine
+- Create a new Job.
+- Choose type job: Pipeline
+- In the page that opens, click tab Pipeline
+- In field "Definition" choose "Pipeline script from SCM"
+- In field "SCM" choose "Git"
+- Enter this repository URL "https://github.com/hannachrnvsk/tms_final_project"
+- In field "branches to build" emter "*/main"
+- Save
+- Move to job page
+- Click "Build now"
